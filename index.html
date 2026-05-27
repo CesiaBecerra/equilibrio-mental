@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Clínica Psicológica Equilibrio Mental</title>
+
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background: linear-gradient(to bottom,#f7f5ff,#eef7ff,#ffffff);
+    overflow-x:hidden;
+    color:#333;
+}
+
+/* DESTELLOS */
+
+body::before{
+    content:"";
+    position:fixed;
+    width:500px;
+    height:500px;
+    background:radial-gradient(circle,#c084fc55,#ffffff00);
+    top:-100px;
+    left:-100px;
+    z-index:-1;
+}
+
+body::after{
+    content:"";
+    position:fixed;
+    width:500px;
+    height:500px;
+    background:radial-gradient(circle,#60a5fa44,#ffffff00);
+    bottom:-100px;
+    right:-100px;
+    z-index:-1;
+}
+
+/* NAVBAR */
+
+.navbar{
+    background:rgba(255,255,255,0.85);
+    backdrop-filter: blur(12px);
+    box-shadow:0 5px 20px rgba(0,0,0,0.08);
+}
+
+.navbar-brand{
+    font-size:1.7rem;
+    font-weight:800;
+    color:#6d28d9 !important;
+    text-shadow:1px 1px 10px rgba(168,85,247,0.3);
+}
+
+/* HERO */
+
+.hero{
+    padding:120px 0;
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+}
+
+.hero::before{
+    content:"";
+    position:absolute;
+    width:700px;
+    height:700px;
+    background:radial-gradient(circle,#d8b4fe55,#ffffff00);
+    top:-250px;
+    left:-150px;
+}
+
+.hero::after{
+    content:"";
+    position:absolute;
+    width:600px;
+    height:600px;
+    background:radial-gradient(circle,#7dd3fc44,#ffffff00);
+    bottom:-250px;
+    right:-150px;
+}
+
+.hero h1{
+    font-size:3.5rem;
+    font-weight:800;
+    color:#4c1d95;
+    text-shadow:0 0 20px rgba(168,85,247,0.3);
+    position:relative;
+    z-index:2;
+}
+
+.hero h1 i{
+    color:#a855f7;
+}
+
+.hero p{
+    margin-top:20px;
+    font-size:1.4rem;
+    color:#475569;
+    position:relative;
+    z-index:2;
+}
+
+/* BOTON */
+
+.hero-btn{
+    margin-top:35px;
+    background:linear-gradient(135deg,#9333ea,#60a5fa);
+    border:none;
+    padding:15px 35px;
+    border-radius:50px;
+    color:white;
+    font-size:1rem;
+    font-weight:600;
+    transition:0.4s;
+    box-shadow:0 10px 30px rgba(147,51,234,0.3);
+}
+
+.hero-btn:hover{
+    transform:translateY(-5px) scale(1.03);
+}
+
+/* TITULOS */
+
+.section-title{
+    font-size:2.3rem;
+    font-weight:800;
+    color:#4c1d95;
+    text-align:center;
+    margin-bottom:50px;
+    position:relative;
+}
+
+.section-title::after{
+    content:"";
+    width:120px;
+    height:5px;
+    background:linear-gradient(to right,#a855f7,#38bdf8);
+    display:block;
+    margin:15px auto;
+    border-radius:30px;
+}
+
+/* CAJAS */
+
+.info-box{
+    background:rgba(255,255,255,0.8);
+    backdrop-filter: blur(12px);
+    border:1px solid rgba(255,255,255,0.4);
+    padding:35px;
+    border-radius:25px;
+    box-shadow:0 10px 35px rgba(0,0,0,0.08);
+    transition:0.4s;
+    height:100%;
+}
+
+.info-box:hover{
+    transform:translateY(-10px);
+    box-shadow:0 15px 40px rgba(168,85,247,0.25);
+}
+
+/* CARDS */
+
+.card{
+    border:none;
+    border-radius:25px;
+    background:rgba(255,255,255,0.85);
+    backdrop-filter: blur(10px);
+    box-shadow:0 10px 30px rgba(0,0,0,0.08);
+    transition:0.4s;
+    overflow:hidden;
+    height:100%;
+}
+
+.card:hover{
+    transform:translateY(-12px) scale(1.02);
+    box-shadow:0 20px 40px rgba(168,85,247,0.25);
+}
+
+.card h5,
+.card h6{
+    color:#4c1d95;
+    font-weight:700;
+}
+
+/* ICONOS */
+
+.icon{
+    font-size:50px;
+    background:linear-gradient(135deg,#9333ea,#38bdf8);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    margin-bottom:20px;
+}
+
+/* IMAGENES */
+
+.card img{
+    border:5px solid #d8b4fe;
+    box-shadow:0 10px 25px rgba(168,85,247,0.3);
+}
+
+/* OBJETIVOS */
+
+.objetivos li{
+    margin-bottom:18px;
+    line-height:1.8;
+    font-size:1.05rem;
+}
+
+/* FOOTER */
+
+footer{
+    background:linear-gradient(135deg,#4c1d95,#1e3a8a);
+    color:white;
+    padding:60px 0;
+    margin-top:80px;
+    position:relative;
+    overflow:hidden;
+}
+
+footer::before{
+    content:"";
+    position:absolute;
+    width:400px;
+    height:400px;
+    background:radial-gradient(circle,#c084fc55,#ffffff00);
+    top:-150px;
+    right:-100px;
+}
+
+footer h4{
+    font-weight:800;
+    margin-bottom:25px;
+}
+
+footer i{
+    color:#93c5fd;
+    margin-right:10px;
+}
+
+.footer-info{
+    font-size:1.1rem;
+    margin-bottom:15px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+.hero h1{
+    font-size:2.3rem;
+}
+
+.hero p{
+    font-size:1.1rem;
+}
+
+.section-title{
+    font-size:1.8rem;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav class="navbar navbar-expand-lg">
+
+<div class="container">
+
+<a class="navbar-brand" href="#">
+
+<img src="img/logo.jpeg"
+alt="Logo"
+width="70"
+height="70"
+class="rounded-circle border border-light shadow me-2">
+
+EQUILIBRIO MENTAL
+
+</a>
+
+</div>
+
+</nav>
+
+<!-- HERO -->
+
+<header class="hero">
+
+<div class="container">
+
+<h1>
+<i class="fa-solid fa-brain"></i>
+Clínica Psicológica "Equilibrio Mental"
+</h1>
+
+<p>
+✨ “Cuidamos tu mente, transformamos tu vida” ✨
+</p>
+
+</div>
+
+</header>
+
+<!-- MISION Y VISION -->
+
+<section class="container my-5">
+
+<h2 class="section-title">
+Misión y Visión
+</h2>
+
+<div class="row g-4">
+
+<div class="col-md-6">
+
+<div class="info-box text-center">
+
+<i class="fa-solid fa-heart icon"></i>
+
+<h3 class="mb-3 fw-bold">
+Misión
+</h3>
+
+<p>
+Brindar servicios psicológicos integrales, accesibles y de alta calidad,
+orientados a la promoción, prevención e intervención en la salud mental,
+contribuyendo al bienestar emocional, personal y social.
+</p>
+
+</div>
+
+</div>
+
+<div class="col-md-6">
+
+<div class="info-box text-center">
+
+<i class="fa-solid fa-eye icon"></i>
+
+<h3 class="mb-3 fw-bold">
+Visión
+</h3>
+
+<p>
+Ser una clínica psicológica líder en el Perú, reconocida por su excelencia,
+innovación y compromiso con la salud mental y el bienestar emocional.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- VALORES -->
+
+<section class="container my-5">
+
+<h2 class="section-title">
+<i class="fa-solid fa-star"></i>
+Valores Corporativos
+</h2>
+
+<div class="row g-4">
+
+<div class="col-md-4">
+
+<div class="card p-4 text-center">
+
+<i class="fa-solid fa-hand-holding-heart icon"></i>
+
+<h5>Empatía</h5>
+
+<p>
+Comprendemos las emociones y necesidades de cada persona
+con sensibilidad y respeto.
+</p>
+
+</div>
+
+</div>
+
+<div class="col-md-4">
+
+<div class="card p-4 text-center">
+
+<i class="fa-solid fa-scale-balanced icon"></i>
+
+<h5>Ética Profesional</h5>
+
+<p>
+Trabajamos con responsabilidad, honestidad e integridad
+en cada intervención.
+</p>
+
+</div>
+
+</div>
+
+<div class="col-md-4">
+
+<div class="card p-4 text-center">
+
+<i class="fa-solid fa-lock icon"></i>
+
+<h5>Confidencialidad</h5>
+
+<p>
+Protegemos la privacidad y seguridad emocional
+de cada paciente.
+</p>
+
+</div>
+
+</div>
+
+<div class="col-md-4">
+
+<div class="card p-4 text-center">
+
+<i class="fa-solid fa-handshake icon"></i>
+
+<h5>Respeto</h5>
+
+<p>
+Brindamos un trato humano, digno y profesional
+a cada persona.
+</p>
+
+</div>
+
+</div>
+
+<div class="col-md-4">
+
+<div class="card p-4 text-center">
+
+<i class="fa-solid fa-circle-check icon"></i>
+
+<h5>Responsabilidad</h5>
+
+<p>
+Compromiso constante con el bienestar y desarrollo
+emocional.
+</p>
+
+</div>
+
+</div>
+
+<div class="col-md-4">
+
+<div class="card p-4 text-center">
+
+<i class="fa-solid fa-people-group icon"></i>
+
+<h5>Compromiso Social</h5>
+
+<p>
+Promovemos activamente la salud mental
+en la comunidad.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- OBJETIVOS -->
+
+<section class="container my-5">
+
+<h2 class="section-title">
+<i class="fa-solid fa-bullseye"></i>
+Objetivos
+</h2>
+
+<div class="info-box">
+
+<h4 class="fw-bold mb-3" style="color:#6d28d9;">
+<i class="fa-solid fa-brain"></i>
+Objetivo General
+</h4>
+
+<p style="font-size:1.05rem;">
+Promover la salud mental y el bienestar emocional mediante
+servicios psicológicos integrales, terapéuticos y preventivos.
+</p>
+
+<hr class="my-4">
+
+<h4 class="fw-bold mb-3" style="color:#6d28d9;">
+<i class="fa-solid fa-list-check"></i>
+Objetivos Específicos
+</h4>
+
+<ul class="objetivos">
+
+<li>
+<i class="fa-solid fa-check text-info me-2"></i>
+Brindar atención psicológica individual, familiar y grupal.
+</li>
+
+<li>
+<i class="fa-solid fa-check text-info me-2"></i>
+Desarrollar programas de prevención y promoción en salud mental.
+</li>
+
+<li>
+<i class="fa-solid fa-check text-info me-2"></i>
+Ofrecer orientación psicológica en instituciones y empresas.
+</li>
+
+<li>
+<i class="fa-solid fa-check text-info me-2"></i>
+Fortalecer la autoestima y bienestar emocional.
+</li>
+
+</ul>
+
+</div>
+
+</section>
+
+<!-- REEMPLAZA SOLO TU SECCIÓN "EQUIPO" POR ESTA -->
+
+<section class="container my-5">
+
+<h2 class="section-title">
+<i class="fa-solid fa-users"></i>
+Nuestro Equipo Profesional
+</h2>
+
+<div class="row justify-content-center mb-5">
+
+<div class="col-md-5">
+
+<div class="card text-center p-4">
+
+<img src="img/general.jpeg"
+class="rounded-circle mx-auto mb-4 img-click"
+style="width:170px;height:170px;object-fit:cover;"
+data-bs-toggle="modal"
+data-bs-target="#modalGeneral">
+
+<h4 class="fw-bold">
+Alejandra Villanueva
+</h4>
+
+<p class="fw-bold" style="color:#9333ea;">
+Dirección General
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="row g-4">
+
+<!-- CLINICA -->
+
+<div class="col-md-3">
+
+<div class="card text-center p-4">
+
+<img src="img/clinica.jpeg"
+class="rounded-circle mx-auto mb-3 img-click"
+style="width:120px;height:120px;object-fit:cover;"
+data-bs-toggle="modal"
+data-bs-target="#modalClinica">
+
+<h5>
+Juan Manuel Caritimari
+</h5>
+
+<p class="fw-bold text-info">
+Área Clínica
+</p>
+
+</div>
+
+</div>
+
+<!-- ORGANIZACIONAL -->
+
+<div class="col-md-3">
+
+<div class="card text-center p-4">
+
+<img src="img/organizacional.jpeg"
+class="rounded-circle mx-auto mb-3 img-click"
+style="width:120px;height:120px;object-fit:cover;"
+data-bs-toggle="modal"
+data-bs-target="#modalOrganizacional">
+
+<h5>
+Diego Sarmiento
+</h5>
+
+<p class="fw-bold text-info">
+Psicología Organizacional
+</p>
+
+</div>
+
+</div>
+
+<!-- EDUCATIVA -->
+
+<div class="col-md-3">
+
+<div class="card text-center p-4">
+
+<img src="img/educativa.jpeg"
+class="rounded-circle mx-auto mb-3 img-click"
+style="width:120px;height:120px;object-fit:cover;"
+data-bs-toggle="modal"
+data-bs-target="#modalEducativa">
+
+<h5>
+Adeli Mego
+</h5>
+
+<p class="fw-bold text-info">
+Psicología Educativa
+</p>
+
+</div>
+
+</div>
+
+<!-- ADMINISTRATIVA -->
+
+<div class="col-md-3">
+
+<div class="card text-center p-4">
+
+<img src="img/administrativa.jpeg"
+class="rounded-circle mx-auto mb-3 img-click"
+style="width:120px;height:120px;object-fit:cover;"
+data-bs-toggle="modal"
+data-bs-target="#modalAdministrativa">
+
+<h5>
+Milagros Barboza
+</h5>
+
+<p class="fw-bold text-info">
+Área Administrativa
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- AGREGA ESTO EN TU CSS -->
+
+<style>
+
+.img-click{
+cursor:pointer;
+transition:0.4s;
+}
+
+.img-click:hover{
+transform:scale(1.08);
+}
+
+.modal-content{
+border-radius:25px;
+overflow:hidden;
+}
+
+.modal-header{
+background:linear-gradient(135deg,#9333ea,#60a5fa);
+color:white;
+}
+
+.modal-body img{
+border:5px solid #d8b4fe;
+box-shadow:0 10px 25px rgba(168,85,247,0.3);
+}
+
+</style>
+
+<!-- PEGA ESTO ANTES DE </body> -->
+
+<!-- MODAL GENERAL -->
+
+<div class="modal fade" id="modalGeneral" tabindex="-1">
+
+<div class="modal-dialog modal-dialog-centered">
+
+<div class="modal-content">
+
+<div class="modal-header">
+
+<h5 class="modal-title">
+Dirección General
+</h5>
+
+<button type="button"
+class="btn-close btn-close-white"
+data-bs-dismiss="modal"></button>
+
+</div>
+
+<div class="modal-body text-center">
+
+<img src="img/general.jpeg"
+class="rounded-circle mb-3"
+style="width:150px;height:150px;object-fit:cover;">
+
+<h4 class="fw-bold">
+Alejandra Villanueva
+</h4>
+
+<p>
+Lidera y supervisa el funcionamiento integral de la clínica,
+garantizando calidad profesional y atención humanizada.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- MODAL CLINICA -->
+
+<div class="modal fade" id="modalClinica" tabindex="-1">
+
+<div class="modal-dialog modal-dialog-centered">
+
+<div class="modal-content">
+
+<div class="modal-header">
+
+<h5 class="modal-title">
+Área Clínica
+</h5>
+
+<button type="button"
+class="btn-close btn-close-white"
+data-bs-dismiss="modal"></button>
+
+</div>
+
+<div class="modal-body text-center">
+
+<img src="img/clinica.jpeg"
+class="rounded-circle mb-3"
+style="width:150px;height:150px;object-fit:cover;">
+
+<h4 class="fw-bold">
+Juan Manuel Caritimari
+</h4>
+
+<p>
+Responsable de la evaluación, diagnóstico,
+orientación e intervención psicológica de los pacientes.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- MODAL ORGANIZACIONAL -->
+
+<div class="modal fade" id="modalOrganizacional" tabindex="-1">
+
+<div class="modal-dialog modal-dialog-centered">
+
+<div class="modal-content">
+
+<div class="modal-header">
+
+<h5 class="modal-title">
+Psicología Organizacional
+</h5>
+
+<button type="button"
+class="btn-close btn-close-white"
+data-bs-dismiss="modal"></button>
+
+</div>
+
+<div class="modal-body text-center">
+
+<img src="img/organizacional.jpeg"
+class="rounded-circle mb-3"
+style="width:150px;height:150px;object-fit:cover;">
+
+<h4 class="fw-bold">
+Diego Sarmiento
+</h4>
+
+<p>
+Encargado de promover el bienestar psicológico
+dentro de organizaciones y empresas,
+desarrollando liderazgo, motivación y trabajo en equipo.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- MODAL EDUCATIVA -->
+
+<div class="modal fade" id="modalEducativa" tabindex="-1">
+
+<div class="modal-dialog modal-dialog-centered">
+
+<div class="modal-content">
+
+<div class="modal-header">
+
+<h5 class="modal-title">
+Psicología Educativa
+</h5>
+
+<button type="button"
+class="btn-close btn-close-white"
+data-bs-dismiss="modal"></button>
+
+</div>
+
+<div class="modal-body text-center">
+
+<img src="img/educativa.jpeg"
+class="rounded-circle mb-3"
+style="width:150px;height:150px;object-fit:cover;">
+
+<h4 class="fw-bold">
+Adeli Mego
+</h4>
+
+<p>
+Área orientada a brindar apoyo psicológico
+en el ámbito educativo, favoreciendo el aprendizaje,
+adaptación escolar y desarrollo emocional.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- MODAL ADMINISTRATIVA -->
+
+<div class="modal fade" id="modalAdministrativa" tabindex="-1">
+
+<div class="modal-dialog modal-dialog-centered">
+
+<div class="modal-content">
+
+<div class="modal-header">
+
+<h5 class="modal-title">
+Área Administrativa
+</h5>
+
+<button type="button"
+class="btn-close btn-close-white"
+data-bs-dismiss="modal"></button>
+
+</div>
+
+<div class="modal-body text-center">
+
+<img src="img/administrativa.jpeg"
+class="rounded-circle mb-3"
+style="width:150px;height:150px;object-fit:cover;">
+
+<h4 class="fw-bold">
+Milagros Barboza
+</h4>
+
+<p>
+Responsable de la organización y gestión administrativa
+de la clínica, incluyendo documentos,
+programación de citas y atención al usuario.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<!-- FOOTER -->
+
+<footer class="text-center">
+
+<div class="container">
+
+<h4>
+<i class="fa-solid fa-brain"></i>
+Clínica Psicológica "Equilibrio Mental"
+</h4>
+
+<p class="footer-info">
+<i class="fa-solid fa-location-dot"></i>
+Jr. Miguel Grau 1231, en el sector de Partido Alto, Tarapoto.
+</p>
+
+<p class="footer-info">
+<i class="fa-solid fa-phone-volume"></i>
+927 052 552
+</p>
+
+<p class="footer-info">
+<i class="fa-solid fa-envelope"></i>
+equilibriomental@gmail.com
+</p>
+
+<hr class="bg-light">
+
+
+</div>
+
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
